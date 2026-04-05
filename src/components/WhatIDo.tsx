@@ -88,19 +88,20 @@ const WhatIDo = () => {
 
             <div className="what-content-in">
               <h3>AI & AUTOMATION</h3>
-              <h4>Workflow Intelligence for Organizations</h4>
+              <h4>Intelligent Systems That Scale</h4>
               <p>
-                AI specialist helping organizations automate workflows—internal ops
-                and customer-facing—so teams ship faster with less manual work.
+                I build intelligent systems that scale — from FastAPI microservices
+                processing 10,000+ daily transactions to multi-agent LangGraph pipelines
+                for AI-powered document analysis.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">LLMs &amp; agents</div>
-                <div className="what-tags">Workflow design</div>
-                <div className="what-tags">RAG &amp; retrieval</div>
-                <div className="what-tags">Evals &amp; guardrails</div>
-                <div className="what-tags">Integrations</div>
-                <div className="what-tags">Product strategy</div>
+                <div className="what-tags">Backend Engineering</div>
+                <div className="what-tags">AI/ML Systems</div>
+                <div className="what-tags">RAG Pipelines</div>
+                <div className="what-tags">LLM Orchestration</div>
+                <div className="what-tags">Cloud &amp; DevOps</div>
+                <div className="what-tags">Full Stack Development</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -125,20 +126,20 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
             <div className="what-content-in">
               <h3>BUILD &amp; SCALE</h3>
-              <h4>Shipping AI in Production</h4>
+              <h4>Production-Ready Engineering</h4>
               <p>
-                I build the systems behind it: APIs, data, voice/real-time, and
-                full-stack products—production-ready, not slide decks.
+                I build the systems behind it: FastAPI microservices, RAG pipelines,
+                and full-stack products — production-ready, not slide decks.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
+                <div className="what-tags">FastAPI</div>
                 <div className="what-tags">Python</div>
-                <div className="what-tags">REST &amp; real-time APIs</div>
+                <div className="what-tags">LangGraph</div>
                 <div className="what-tags">PostgreSQL</div>
                 <div className="what-tags">MongoDB</div>
                 <div className="what-tags">React</div>
-                <div className="what-tags">Cloud &amp; infra</div>
+                <div className="what-tags">AWS &amp; Docker</div>
               </div>
               <div className="what-arrow"></div>
             </div>
