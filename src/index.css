@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import "tailwindcss";
 
 :root {
   font-family: "Geist", sans-serif;
@@ -18,8 +19,8 @@
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  --accentColor: #5eead4;
-  --backgroundColor: #0a0e17;
+  --accentColor: #22d3ee;
+  --backgroundColor: #020917;
   --vh: 100vh;
   --vh: 100svh;
 }
@@ -66,7 +67,7 @@ main {
 body {
   margin: 0;
   height: auto;
-  background-color: #050810;
+  background-color: #010610;
   flex-grow: 1;
   --cWidth: calc(100% - 30px);
   --cMaxWidth: 1920px;
