@@ -80,6 +80,7 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--accentColor);
+  text-align: center;
 }
 
 .bento-items {
@@ -89,6 +90,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  justify-content: center;
 }
 
 .bento-item {

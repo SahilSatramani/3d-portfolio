@@ -66,13 +66,13 @@ const BentoGrid = () => (
         />
         <BentoCard
           title="Cloud & DevOps"
-          items={["AWS (EMR, S3, Lambda, RDS)", "GCP", "Docker", "Kubernetes", "Terraform"]}
-          size="large"
+          items={["AWS", "GCP", "Docker", "Kubernetes", "Terraform"]}
+          size="medium"
         />
         <BentoCard
           title="CI/CD & Testing"
           items={["GitHub Actions", "pytest", "Docker Compose"]}
-          size="small"
+          size="medium"
         />
       </div>
     </div>
