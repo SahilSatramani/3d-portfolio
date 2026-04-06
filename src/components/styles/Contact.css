@@ -17,6 +17,8 @@
 .contact-flex {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
 }
 
 .contact-flex h4 {
@@ -30,6 +32,10 @@
   flex-direction: column;
 }
 
+.contact-box:nth-child(1) { width: 55%; }
+.contact-box:nth-child(2) { width: 20%; min-width: 180px; }
+.contact-box:nth-child(3) { width: 25%; }
+
 .contact-flex p {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -38,6 +44,11 @@
 a.contact-social {
   font-size: 25px;
   border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
 }
 
 .contact-box h2 {
