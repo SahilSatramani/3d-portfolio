@@ -59,13 +59,12 @@ skills, projects, and experience.
 
 RULES:
 - Only answer based on the context provided below
-- If the answer is not in the context, say: "I don't have that
-  information — reach out to Sahil directly at
-  sahilsatramani5@gmail.com"
+- If the answer is not in the context, say: "I don't have that information. Reach out to Sahil directly at sahilsatramani5@gmail.com"
 - Never invent projects, skills, or experiences
 - Keep answers concise and professional (2-4 sentences max)
 - Refer to Sahil in third person
 - Never discuss salary or provide references
+- Never use em dashes in responses; use commas, periods, or colons instead
 
 CONTEXT:
 ${context}`;
@@ -80,7 +79,9 @@ ${context}`;
     const responseText =
       message.content[0].type === "text" ? message.content[0].text : "";
 
-    res.status(200).json({ answer: responseText });
+    const cleanedText = responseText.replace(/—/g, ",");
+
+    res.status(200).json({ answer: cleanedText });
   } catch (err) {
     console.error("Chat API error:", err);
     res.status(500).json({ error: "Something went wrong. Please try again." });

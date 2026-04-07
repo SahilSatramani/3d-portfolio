@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Bot, Send } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Message {
   id: string;
@@ -18,7 +20,7 @@ const ChatWidget = () => {
       id: "welcome",
       role: "assistant",
       content:
-        "Hi, I'm Atlas — Sahil Satramani's AI assistant. Ask me anything about his work, skills, or projects.",
+        "Hi, I'm Atlas, Sahil Satramani's AI assistant. Ask me anything about his work, skills, or projects.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -132,8 +134,8 @@ const ChatWidget = () => {
         onClick={() => (isOpen ? handleClose() : setIsOpen(true))}
         style={{
           position: "fixed",
-          bottom: "80px",
-          right: "32px",
+          bottom: "32px",
+          left: "32px",
           width: "56px",
           height: "56px",
           borderRadius: "50%",
@@ -152,12 +154,13 @@ const ChatWidget = () => {
           boxShadow: isOpen
             ? "0 0 30px rgba(34, 211, 238, 0.6)"
             : [
-                "0 0 20px rgba(34, 211, 238, 0.4)",
-                "0 0 35px rgba(34, 211, 238, 0.7)",
-                "0 0 20px rgba(34, 211, 238, 0.4)",
+                "0 0 10px rgba(34, 211, 238, 0.3)",
+                "0 0 55px rgba(34, 211, 238, 1.0), 0 0 80px rgba(34, 211, 238, 0.3)",
+                "0 0 10px rgba(34, 211, 238, 0.3)",
               ],
+          scale: isOpen ? 1 : [1, 1.06, 1],
         }}
-        transition={{ duration: 2, repeat: isOpen ? 0 : Infinity }}
+        transition={{ duration: 2.5, repeat: isOpen ? 0 : Infinity, ease: "easeInOut" }}
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
@@ -193,8 +196,8 @@ const ChatWidget = () => {
             transition={{ duration: 0.25, ease: "easeOut" }}
             style={{
               position: "fixed",
-              bottom: "148px",
-              right: "32px",
+              bottom: "100px",
+              left: "32px",
               width: "360px",
               height: "500px",
               background: "rgba(2, 9, 23, 0.95)",
@@ -324,6 +327,36 @@ const ChatWidget = () => {
                           />
                         ))}
                       </div>
+                    ) : msg.role === "assistant" ? (
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          p: ({ children }) => (
+                            <p style={{ margin: "0 0 8px 0", lineHeight: "1.5" }}>{children}</p>
+                          ),
+                          ul: ({ children }) => (
+                            <ul style={{ margin: "4px 0", paddingLeft: "16px" }}>{children}</ul>
+                          ),
+                          li: ({ children }) => (
+                            <li style={{ margin: "2px 0" }}>{children}</li>
+                          ),
+                          strong: ({ children }) => (
+                            <strong style={{ color: "#22d3ee", fontWeight: 600 }}>{children}</strong>
+                          ),
+                          a: ({ href, children }) => (
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#22d3ee", textDecoration: "underline" }}
+                            >
+                              {children}
+                            </a>
+                          ),
+                        }}
+                      >
+                        {msg.content}
+                      </ReactMarkdown>
                     ) : (
                       msg.content
                     )}

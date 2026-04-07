@@ -10,7 +10,7 @@
 .social-icons {
   position: absolute;
   left: -20px;
-  bottom: 20px;
+  bottom: 100px;
   display: none;
   flex-direction: column;
   gap: 8px;
